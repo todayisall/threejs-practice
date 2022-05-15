@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
-
+import  styles from  "./index.module.less";
 const BaseLayout = () => {
   return (
-    <div>
+    <div className={styles.layout}>
       {/* A "layout route" is a good place to put markup you want to
               share across all the pages on your site, like navigation. */}
-      <nav>
+      <nav className={styles.nav}>
         <ul>
           <li>
             <Link to="/home">Home</Link>
@@ -14,13 +14,13 @@ const BaseLayout = () => {
             <Link to="/shadows">shadows</Link>
           </li>
           <li>
-            <Link to="/haunted/house">indoor</Link>
+            <Link to="/haunted/indoor">indoor</Link>
           </li>
         </ul>
       </nav>
-
-      <hr />
-      <Outlet />
+      <main className={styles.main}>
+        <Outlet />
+      </main>
     </div>
   );
 };

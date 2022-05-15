@@ -3,6 +3,7 @@ import BaseLayout from "../components/BaseLayout";
 import NoMatch from "../components/NoMatch";
 import HauntedHouse from "../pages/HauntedHouse";
 import Home from "../pages/Home";
+import Indoor from "../pages/Indoor";
 import Shadows from "../pages/Shadows";
 
 const Router = () => {
@@ -15,7 +16,7 @@ const Router = () => {
         <Route path="/" element={<BaseLayout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/shadows" element={<Shadows />} />
-          <Route path="/haunted/house" element={<HauntedHouse />} />
+          <Route path="/haunted/indoor" element={<Indoor />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
