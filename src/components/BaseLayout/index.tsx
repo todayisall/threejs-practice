@@ -16,6 +16,9 @@ const BaseLayout = () => {
           <li>
             <Link to="/haunted/indoor">indoor</Link>
           </li>
+          <li>
+            <Link to="/haunted/hauntedHouse">haunted house</Link>
+          </li>
         </ul>
       </nav>
       <main className={styles.main}>

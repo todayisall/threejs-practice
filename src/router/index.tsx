@@ -17,6 +17,7 @@ const Router = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/shadows" element={<Shadows />} />
           <Route path="/haunted/indoor" element={<Indoor />} />
+          <Route path="/haunted/hauntedHouse" element={<HauntedHouse />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
