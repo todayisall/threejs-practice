@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import  styles from  "./index.module.less";
+import styles from "./index.module.less";
 const BaseLayout = () => {
   return (
     <div className={styles.layout}>
@@ -14,10 +14,13 @@ const BaseLayout = () => {
             <Link to="/shadows">shadows</Link>
           </li>
           <li>
-            <Link to="/haunted/indoor">indoor</Link>
+            <Link to="/indoor">indoor</Link>
           </li>
           <li>
-            <Link to="/haunted/hauntedHouse">haunted house</Link>
+            <Link to="/hauntedHouse">haunted house</Link>
+          </li>
+          <li>
+            <Link to="/particles">particles</Link>
           </li>
         </ul>
       </nav>
