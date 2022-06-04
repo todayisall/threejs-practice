@@ -1,8 +1,6 @@
 import { FunctionComponent, useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import * as dat from "dat.gui";
 
 const HauntedHouse: FunctionComponent = () => {
   let scene: any = null;

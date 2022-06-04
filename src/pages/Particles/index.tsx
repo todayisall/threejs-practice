@@ -1,74 +1,14 @@
 import { FunctionComponent, useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { initWebGl } from "../common";
 
 const Particles: FunctionComponent = () => {
   let scene: THREE.Scene;
   let camera: THREE.Camera;
   let controls: any;
   let renderer: THREE.Renderer;
-  const initWebGl = () => {
-    const canvas = document.querySelector(".webGl") as HTMLCanvasElement;
 
-    /**
-     * scene
-     */
-    const innerScene = new THREE.Scene();
-
-    /**
-     * camera
-     */
-    const initCamera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    initCamera.position.z = 5;
-    innerScene.add(initCamera);
-
-    /**
-     * renderer
-     */
-    const innerRenderer = new THREE.WebGLRenderer({ canvas });
-
-    innerRenderer.setPixelRatio(window.devicePixelRatio);
-    innerRenderer.setSize(window.innerWidth, window.innerHeight);
-    innerRenderer.render(innerScene, initCamera);
-
-    const innerControls = new OrbitControls(
-      initCamera,
-      innerRenderer.domElement
-    );
-    innerControls.enableDamping = true;
-
-    window.addEventListener("resize", () => {
-      innerRenderer.setSize(window.innerWidth, window.innerHeight);
-      initCamera.aspect = window.innerWidth / window.innerHeight;
-      initCamera.updateProjectionMatrix();
-    });
-    window.addEventListener("dblclick", () => {
-      // 兼容safari
-      const fullscreenElement = document.fullscreenElement;
-      if (!fullscreenElement) {
-        if (canvas.requestFullscreen) {
-          canvas?.requestFullscreen();
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    });
-
-    return {
-      canvas,
-      scene: innerScene,
-      renderer: innerRenderer,
-      camera: initCamera,
-      controls: innerControls,
-    };
-  };
   const initAnimation = (fn: any) => {
     // animations
     const tick = () => {
@@ -88,8 +28,11 @@ const Particles: FunctionComponent = () => {
     const initResult = initWebGl();
     scene = initResult.scene;
     camera = initResult.camera;
-    controls = initResult.controls;
     renderer = initResult.renderer;
+
+    // controls
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
 
     // particles
     // Geometry

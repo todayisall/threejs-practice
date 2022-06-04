@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Indoor from "../pages/Indoor";
 import Shadows from "../pages/Shadows";
 import Particles from "../pages/Particles";
+import Galaxy from "../pages/Galaxy";
 
 const Router = () => {
   {
@@ -20,6 +21,7 @@ const Router = () => {
           <Route path="/indoor" element={<Indoor />} />
           <Route path="/hauntedHouse" element={<HauntedHouse />} />
           <Route path="/particles" element={<Particles />} />
+          <Route path="/galaxy" element={<Galaxy />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
