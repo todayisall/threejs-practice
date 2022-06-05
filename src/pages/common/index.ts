@@ -23,7 +23,10 @@ export const initWebGl = () => {
   /**
    * renderer
    */
-  const innerRenderer = new THREE.WebGLRenderer({ canvas });
+  const innerRenderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+  });
 
   innerRenderer.setPixelRatio(window.devicePixelRatio);
   innerRenderer.setSize(window.innerWidth, window.innerHeight);

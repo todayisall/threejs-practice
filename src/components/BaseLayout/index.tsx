@@ -25,6 +25,9 @@ const BaseLayout = () => {
           <li>
             <Link to="/galaxy">galaxy</Link>
           </li>
+          <li>
+            <Link to="/physics">physics</Link>
+          </li>
         </ul>
       </nav>
       <main className={styles.main}>
