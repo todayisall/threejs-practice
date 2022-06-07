@@ -1,5 +1,5 @@
 import * as THREE from "three";
-
+import * as Stats from "stats.js";
 export const initWebGl = () => {
   const canvas = document.querySelector(".webGl") as HTMLCanvasElement;
 
@@ -57,4 +57,12 @@ export const initWebGl = () => {
     renderer: innerRenderer,
     camera: initCamera,
   };
+};
+
+export const initStats = () => {
+  const stats = new Stats();
+  stats.dom.className = "statusPanel";
+  document.body.appendChild(stats.dom);
+
+  return stats;
 };
